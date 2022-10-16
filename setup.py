@@ -7,7 +7,14 @@ setup(
     long_description="Show todays stock winners from a REST API, returning data in json format",
     author="Edvard Englund",
     author_email='edvardenglund@yahoo.se',
-    packages=find_packages(exclude=["tests*"]),
+    packages=find_packages(exclude=["tests"]),
+    include_package_data=True,
+    package_data={"": ["*.csv"] },
+    install_requires=[
+        'wheel',
+        'click',
+        'tornado',
+    ],
     entry_points={
         'console_scripts': [
             'stock-winners = stock_winners.cli:start'
