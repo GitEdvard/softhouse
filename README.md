@@ -8,6 +8,6 @@ Show today's stock winner.
 
 ## Usage
 - Activate environment, ```source ./venv/bin/activate```
-- Start service, ```stock-winner --port 2000```
+- Start service, ```stock-winners --port 2000```
 - Receive the winners, ```curl localhost:2000/api/winners```
 - Profit
