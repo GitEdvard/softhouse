@@ -1,0 +1,25 @@
+name: Run unit tests
+on: [push]
+jobs:
+  run-unit-tests:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - name: Install stock-winners
+        run: "pip install -r requirements.txt ."
+
+      - name: lint python
+        run: flake8 stock_winners
+
+      - name: Run unit tests
+        run: |
+          pip install pytest
+          pytest ./tests
