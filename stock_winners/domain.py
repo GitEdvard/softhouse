@@ -24,6 +24,9 @@ class StockExchange:
             stock_histories.append(stock_history)
         self.stock_histories = stock_histories
 
+    def raise_exeption(self):
+        raise Exception("hej")
+
     @property
     def company_list(self):
         return list(set(item.company_abbr for item in self.stock_values))
@@ -32,6 +35,7 @@ class StockExchange:
         stock_motions = \
             [stock_history.get_latest_motion() for stock_history in self.stock_histories]
         stock_motions.sort(key=lambda x: x.change_in_percent, reverse=True)
+        self.raise_exeption()
 
         return stock_motions[:3]
 

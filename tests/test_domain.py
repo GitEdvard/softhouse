@@ -61,3 +61,4 @@ def test_daily_winners__third_item(stock_exchange_with_entire_list):
     assert daily_winners[2].company_abbr == "ABB"
     assert round(daily_winners[2].change_in_percent, 2) == 1.37
     assert daily_winners[2].latest == 222
+
