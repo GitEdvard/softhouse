@@ -1,0 +1,13 @@
+[
+  {
+    "type": "python",
+    "program": "${workspaceFolder}/stock_winners/cli.py",
+    "args": [ "stock-winners", "--port", "2000" ]
+  },
+  {
+    "type": "curl",
+    "program": "localhost:2000/api/winners",
+    "args": [ "-s", "--retry", "10", "--retry-connrefused", "--retry-delay", "1" ]
+  }
+]
+
